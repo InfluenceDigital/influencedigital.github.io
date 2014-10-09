@@ -1,0 +1,40 @@
+<!-- Case Studies -->
+<div id="work" class="ua-case ua-section row clearfix carousel slide">
+
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#work" data-slide-to="0" class="active"></li>
+		<li data-target="#work" data-slide-to="1"></li>
+		<li data-target="#work" data-slide-to="2"></li>
+	</ol>
+
+	<div class="carousel-inner">
+	{% for post in site.categories.work %}
+		<div class="item{% if post.css == 'tc-usoa' %} active{% endif %}">
+			<div class="ua-work-background {{ post.css }}">
+				<div class="col-sm-6 ua-work-thumb">
+					<img src="{{ site.url }}/img/{{ post.image }}" alt="" class="img-responsive">
+				</div>
+				<div class="col-sm-6 ua-work-summary">
+					<div class="ua-work-logo {{ post.logo }}">
+						<!-- client logo -->
+					</div>
+					<div class="h2 ua-work-headline">{{ post.title }}</div>
+					<p class="ua-section-tagline">{{ post.excerpt }}</p>
+					<p class="ua-view-project">
+						<a href="{{ site.url }}{{ post.url }}" class="ua-popup">VIEW PROJECT</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+
+	<!-- Controls -->
+	<a class="left carousel-control" href="#work" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class="right carousel-control" href="#work" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>

@@ -1,0 +1,1243 @@
+@charset "UTF-8";
+
+/*!
+ *
+ * Website global styles | (c) Influence Digital 2014 | author: Jabran Rafique
+ * Includes: Google Web Fonts, Twitter Bootstrap, Animate.css, IcoMoon and Magnific Popup
+ *
+ */
+
+// Import Google font Montserrat
+@import url("//fonts.googleapis.com/css?family=Muli:300|Raleway:900,500");
+
+$icon-font-path: "bootstrap-fonts/";
+$brand-primary: #5961ac;
+$font-family-sans-serif: "Muli", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-size-base: 16px !default;
+$line-height-base: 1.5 !default;
+$headings-font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-weight: 900;
+$headings-color: #5961ac;
+$text-color: #333; /* #646464; */
+$invert-text-color: #fff;
+$link-hover-color: $brand-primary;
+$brand-border-color: #f1f1f1;
+$hr-color: #b4b4c9;
+$service-heading-color: darken($brand-primary, 20%);
+
+// Import Bootstrap SASS
+@import "bootstrap-sass/stylesheets/bootstrap";
+
+// Import Animate.css
+@import "animate";
+
+// Import Magnific-Popup SASS
+@import "bower_components/magnific-popup/src/css/main";
+
+// Setup icomoon icon typeface
+@font-face {
+	font-family: 'icomoon';
+	src:url('icomoon-fonts/icomoon.eot?-aptvmp');
+	src:url('icomoon-fonts/icomoon.eot?#iefix-aptvmp') format('embedded-opentype'),
+		url('icomoon-fonts/icomoon.woff?-aptvmp') format('woff'),
+		url('icomoon-fonts/icomoon.ttf?-aptvmp') format('truetype'),
+		url('icomoon-fonts/icomoon.svg?-aptvmp#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*! 
+ * =========================
+ *   Influence Digital CSS 
+ * =========================
+ */
+
+.masthead-wrapper {
+	h1 {
+		margin: 0;
+	}
+}
+
+.ua-logo {
+	display: none;
+	width: 205px;
+	height: 60px;
+	background-color: rgba(0,0,0,0);
+	background-image: url(../img/influence-digital-logo.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	margin: 0 inherit;
+}
+
+.ua-masthead {
+	position: absolute;
+	display: block;
+	top: 5px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	@include transition(position, 0.3s linear);
+
+	@media(max-width: $screen-tablet) {
+		top: 0;
+		.ua-logo {
+			width: 120px;
+			height: 50px;
+			line-height: 50px;
+			background-size: 100%;
+		}
+
+		background-color: $headings-color;
+	}
+
+	&.sticky {
+		background-color: $invert-text-color;
+		box-shadow: 0 1px 5px $text-color;
+		position: fixed;
+		z-index: 999;
+		top: 0;
+
+		@media (max-width: $screen-phone) {
+			line-height: 78px;
+
+			.ua-logo {
+				line-height: 78px;
+				height: 78px;
+			}
+		}
+
+		.masthead-wrapper {
+			padding-left: 0;
+		}
+
+		.ua-logo {
+			display: block;
+			background-color: transparent;
+			background-image: url(../img/influence-digital-logo-invert.png);
+			margin: 5px 0;
+			background-size: 90%;
+		}
+
+		.inactive-nav,
+		.active-nav {
+			&:hover,
+			&:focus,
+			&.hover 	{
+				color: $headings-color;
+			}
+		}
+
+		.nav-item,
+		.nav-mobile {
+			color: $headings-color;
+
+			&:hover,
+			&:focus,
+			&.hover 	{
+				color: $brand-primary;
+			}
+		}
+	}
+}
+
+.list-mobile-nav {
+	line-height: 50px;
+	display: none;
+
+	@media (max-width: $screen-tablet) {
+		display: block;
+	}
+
+	a {
+		font-size: 26px;
+		color: $brand-primary;
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&.hover {
+			color: $invert-text-color;
+		}
+	}
+
+	.active-nav {
+		display: none;
+	}
+
+	.inactive-nav {
+		display: block;
+	}
+}
+
+.nav-mobile-items {
+	display: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+
+	ul {
+		margin: 0;
+	}
+
+	li {
+		display: inline-block;
+
+		a {
+			display: block;
+			padding: 10px 5px;
+			font-size: ($font-size-base - 2);
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&.hover {
+				color: $invert-text-color;
+			}
+		}
+	}
+}
+
+.list-nav {
+	display: block;
+	margin: 0;
+	line-height: 70px;
+
+	@media (max-width: $screen-tablet) {
+		display: none;
+	}
+
+	li {
+		a {
+			color: $invert-text-color;
+			text-decoration: none;
+			padding: 5px;
+
+			&:hover,
+			&:focus,
+			&.hover {
+				color: $brand-primary;
+			}
+		}
+	}
+}
+
+.ua-section {
+	color: $invert-text-color;
+	background-color: $headings-color;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-size: cover;
+	background-position: 50% 0;
+	overflow: hidden;
+
+	@media(min-width: $screen-md-min) {
+		min-height: 800px;
+	}
+
+	.ua-section-heading {
+
+		@media (min-height: $screen-phone)	{
+			padding-top: 50px;
+		}
+
+		.ua-headline {
+			font-size: $font-size-h2;
+
+			@media (min-width: $screen-phone)	{
+				font-size: ($font-size-h2 * 1.5)
+			}
+		}
+
+		hr {
+			border-top: 3px solid $hr-color;
+			width: 150px;
+		}
+
+	}
+}
+
+.ua-section-invert {
+	background-color: $invert-text-color;
+	color: $text-color;
+}
+
+.ua-section-tagline {
+	font-size: ($font-size-base * 1.125);
+
+	@media (min-width: $screen-phone)	{
+		font-size: ($font-size-base * 1.25);
+	}
+}
+
+.nikola-tesla {
+	font-style: oblique;
+}
+
+.ua-home {
+	background-image: url(../img/id-humming-bird.jpg);
+	
+	.ua-section-heading {
+		background-color: rgba(0, 0, 0, 0);
+		margin-top: 15%;
+
+		@media(max-width: $screen-phone) and (orientation: portrait) {
+			margin-top: 45%;
+		}
+	}
+
+	.ua-milestone {
+		margin: 10px auto;
+		background-image: url(../img/influence-digital-logo-lg.png);
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: 90%;
+		width: 600px;
+		height: 190px;
+
+		@include text-hide();
+	}
+
+	.ua-social-channels {
+		margin-bottom: 18px;
+		padding-bottom: 18px;
+	}
+}
+
+.ua-social-channels {
+	margin-top: 18px;
+	font-size: $font-size-h1;
+
+	a {
+		color: $invert-text-color;
+		text-decoration: none;
+
+		&:hover,
+		&:focus,
+		&.hover {
+			color: $invert-text-color;
+		}
+	}
+}
+
+.twitter,
+.facebook,
+.github,
+.pinterest,
+.google-plus,
+.linkedin,
+.youtube,
+.instagram,
+.tumblr {
+	color: $invert-text-color;
+	text-decoration: none;
+
+	i {
+		text-align: center;
+		&:before {
+			// text-shadow: 0 1px 1px darken($headings-color, 10%);
+			color: $invert-text-color;
+			line-height: 1.75;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&.hover	{
+		color: $headings-color;
+
+		i {
+			&:before {
+				text-shadow: 0 1px 1px $brand-primary;
+				color: darken($brand-border-color, 20%);
+			}
+		}
+	}
+}
+
+.icon-twitter,
+.icon-facebook,
+.icon-github,
+.icon-pinterest,
+.icon-google-plus,
+.icon-linkedin,
+.icon-youtube,
+.icon-instagram,
+.icon-tumblr {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter {
+	&:before {
+		content: "\f099";
+	}
+}
+
+.icon-facebook {
+	&:before {
+		content: "\f09a";
+	}
+}
+
+.icon-github {
+	&:before {
+		content: "\f09b";
+	}
+}
+
+.icon-pinterest {
+	&:before {
+		content: "\f0d2";
+	}
+}
+
+.icon-google-plus {
+	&:before {
+		content: "\f0d5";
+	}
+}
+
+.icon-linkedin {
+	&:before {
+		content: "\f0e1";
+	}
+}
+
+.icon-youtube {
+	&:before {
+		content: "\f167";
+	}
+}
+
+.icon-instagram 	{
+	&:before {
+		content: "\f16d";
+	}
+}
+
+.icon-tumblr {
+	&:before {
+		content: "\f173";
+	}
+}
+
+.ua-about {
+	.ua-headline {
+		color: $invert-text-color;
+	}
+
+	.ua-section-tagline {
+		margin-top: 18px;
+		margin-bottom: 18px;
+	}
+
+	.id-partners {
+		position: relative;
+		width: 637px;
+		height: 557px;
+		background-color: transparent;
+		background-image: url(../img/id-partners.png);
+		background-repeat: no-repeat;
+		background-position: 50% 25%;
+		background-size: 65%;
+	}
+
+	.id-partner {
+		position: absolute;
+		display: block;
+		width: 120px;
+		height: 120px;
+		border-radius: 100%;
+
+		@include text-hide();
+	}
+
+	.partner-itg {
+		left: 0;
+		right: 0;
+		top: 46px;
+		margin: auto;
+	}
+
+	.partner-outside {
+		right: 108px;
+		bottom: 142px;
+		margin: auto;
+	}
+}
+
+.ua-client {
+
+	.ua-client-list {
+		@media (min-width: $screen-tablet) {
+			margin-top: 50px;
+		}
+
+		.row {
+			&:first-child {
+				@media (min-width: $screen-desktop) {
+					border-bottom: 2px solid $brand-border-color;
+				}
+			}
+		}
+	}
+}
+
+.clients {	
+	display: inline-block;
+	@media (min-width: $screen-desktop) {
+		border-right: 2px solid $brand-border-color;
+		padding: 18px inherit;
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	&[data-target="#work"] {
+		cursor: pointer;
+	}
+
+	&:after {
+		display: inline-block;
+		content: " ";
+		width: 263px;
+		height: 112px;
+		background-image: url(../img/influence-digital-clients.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: auto 224px;
+
+	    filter: url(../img/filters.svg#grayscale); /* Firefox 3.5+ */
+	    filter: gray; /* IE6-9 */
+	    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+	    opacity: 0.35;
+	    filter: alpha(opacity=40); /* MSIE */
+
+		@include transition(all 0.3s linear);
+	}
+
+	&:hover,
+	&:focus,
+	&.hover {
+		&:after {
+			opacity: 1;
+			filter: alpha(opacity=100); /* MSIE */
+			filter: none;
+			-webkit-filter: grayscale(0);
+		}
+	}
+
+	&.client-thomas-cook {
+		&:after {
+			background-position: 0 0;
+		}
+	}
+
+	&.client-we-are-fstvl {
+		&:after {
+			background-position: -263px 0;
+		}
+	}
+
+	&.client-above-beyond {
+		&:after {
+			background-position: -526px 0;
+		}
+	}
+
+	&.client-dorothy-perkins {
+		&:after {
+			background-position: -789px 0;
+		}
+	}
+
+	&.client-lord-of-dance {
+		&:after {
+			background-position: 0 -112px;
+		}
+	}
+
+	&.client-elite-model-look {
+		&:after {
+			background-position: -263px -112px;
+		}
+	}
+
+	&.client-hobbs {
+		&:after {
+			background-position: -526px -112px;
+		}
+	}
+
+	&.client-dennis {
+		&:after {
+			background-position: -789px -112px;
+		}
+	}	
+}
+
+.ua-case {
+	min-height: 400px;
+
+	.ua-work-background {
+		width: 100%;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+
+		@media (max-width: $screen-tablet) {
+			min-height: 750px;
+		}
+
+		@media (min-width: $screen-desktop) {
+			min-height: 650px;
+		}
+
+		@media (min-width: $screen-phone) {
+			display: table;
+		}
+
+		&.tc-usoa {
+			background-image: url(../img/id-usoa-background.jpg);
+		}
+
+		&.wearefstvl {
+			background-image: url(../img/id-wearefstvl-background.jpg);
+		}
+
+		&.elite {
+			background-image: url(../img/id-elite-background.jpg);
+		}
+	}
+
+	.ua-work-thumb,
+	.ua-work-summary {
+		@media (min-width: $screen-tablet) {
+			display: table-cell;
+			float: none;
+			vertical-align: middle;
+		}
+	}
+
+	.ua-work-summary {
+		@media (max-width: $screen-phone) {
+			text-align: center;
+		}
+	}
+
+	.ua-work-headline {
+		line-height: $headings-line-height;
+		margin-top: 10px;
+		color: #fff;
+
+		&:after {
+			display: inline-block;
+			content: ".";
+			color: $brand-primary;
+			margin-left: 3px;
+			vertical-align: baseline;
+		}
+	}
+
+	.ua-section-tagline {
+		font-size: $font-size-base;
+		margin-bottom: 18px;
+	}
+}
+
+.ua-work-logo {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	display: block;
+	min-width: 287px;
+	min-height: 60px;
+
+	@media (max-width: $screen-phone) {
+		background-position: center 0;
+		margin-top: 18px;
+	}
+
+	&.ua-elite-logo {
+		background-image: url(../img/id-elite-logo.png);
+	}
+
+	&.ua-wearefstvl-logo {
+		background-image: url(../img/id-wearefstvl-logo.png);
+	}
+
+	&.ua-usoa-logo {
+		background-image: url(../img/id-usoa-logo.png);
+	}
+}
+
+.ua-view-project {
+	a {
+		display: inline-block;
+		border: 2px solid $invert-text-color;
+		padding: 14px 60px;
+		text-decoration: none;
+		color: $invert-text-color;
+		@include transition(all .2s ease);
+
+		&:hover,
+		&:focus,
+		&.hover {
+			border-color: $brand-primary;
+			background-color: $headings-color;
+			color: $invert-text-color;
+		}
+	}
+}
+
+.carousel-control {
+	@media (min-width: $screen-tablet) {
+		width: 6%;
+	}
+	opacity: 1;
+
+	&:hover,
+	&:focus,
+	&.hover {
+		opacity: 1;
+	}
+
+	&.left,
+	&.right {
+		background: none;
+
+		@media (max-width: $screen-phone) {
+			pointer-events: none;
+		}
+	}
+}
+
+
+.ua-services {
+
+	.ua-section-parent-row {
+		display: table;
+	}
+
+	.ua-section-heading {
+		background: $brand-border-color;
+		padding: 50px inherit;
+
+		@media(min-width: $screen-lg-desktop) {
+			display: table-cell;
+			vertical-align: middle;
+			float: none;
+		}
+
+		.ua-headline {
+			margin-top: 0;
+		}
+	}
+}
+
+.ua-section-expertise {
+	@media (min-width: $screen-lg-desktop) {
+		display: table-cell;
+		float: none;
+	}
+
+	> .col-sm-12 {
+		@media (min-width: $screen-tablet) and (max-width: 1024px) {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		&:first-child {
+			@media (min-width: $screen-tablet) {
+				border-bottom: 1px solid $brand-border-color;
+
+				.ua-expertise {
+					padding-top: 50px;
+				}
+			}
+		}
+	}
+
+	.ua-expertise {
+		float: left;
+		display: inline-block;
+
+		@media(max-width: $screen-phone) {
+			border-bottom: 1px solid $brand-border-color;
+			padding-bottom: 10px;
+		}
+
+		@media(min-width: $screen-tablet) {
+			min-height: 420px;
+			border-right: 1px solid $brand-border-color;
+
+			@media(orientation: landscape) and (max-width: 1024px) {
+				border-right: none;
+			}
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		.media-object {
+			&:before {
+				content: " ";
+				display: block;
+				width: 105px;
+				height: 105px;
+				background-image: url(../img/influence-digital-expertises.png);
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: auto 210px;
+				position: relative;
+				margin: 26px auto 0 auto;
+			}
+		}
+
+		.community-engagement {
+			.media-object {
+				&:before {
+					background-position: 0 0;
+				}
+			}
+		}
+
+		.development-content {
+			.media-object {
+				&:before {
+					background-position: -105px 0;
+				}
+			}
+		}
+
+		.advocacy {
+			.media-object {
+				&:before {
+					background-position: -210px 0;
+				}
+			}
+		}
+
+		.partnerships {
+			.media-object {
+				&:before {
+					background-position: 0 -105px;
+				}
+			}
+		}
+
+		.digital-advertising {
+			.media-object {
+				&:before {
+					background-position: -105px -105px;
+				}
+			}
+		}
+
+		.listening-analytics-reporting {
+			.media-object {
+				&:before {
+					background-position: -210px -105px;
+				}
+			}
+		}
+
+		.media-body {
+			text-align: center;
+
+			h3 {
+				color: $service-heading-color;
+				margin-top: 10px;
+
+				@media (min-width: $screen-lg-desktop) and (max-width: 1280px) {
+					font-size: $font-size-h5;
+				}
+			}
+
+			.ua-section-tagline {
+				@media (min-width: $screen-phone)	{
+					font-size: ($font-size-base * 1.125);
+				}
+			}
+		}
+	}
+}
+
+.ua-section-join-us {
+
+	p {
+		margin-bottom: 0;
+	}
+	
+	a {
+		width: 100%;
+		display: block;
+		padding-top: 18px;
+		padding-bottom: 18px;
+		font-family: $headings-font-family;
+		font-size: $font-size-h3;
+		background-color: $brand-primary;
+		color: $invert-text-color;
+		@include transition(all 0.2s ease);
+
+		&:hover,
+		&:focus,
+		&.hover {
+			background-color: darken($brand-primary, 20%);
+			color: lighten(black, 10%);
+			text-decoration: none;
+		}
+	}
+}
+
+.ua-contact {
+	background-image: url(../img/influence-digital-contact.png);
+	background-size: 100%;
+	background-position: 50% 115%;
+	padding: 18px inherit;
+	
+	@media(min-width: $screen-tablet) {
+		padding: 60px inherit;
+	}
+
+	.container {
+		&>div {
+			margin-bottom: 18px;
+		}
+	}
+
+	.ua-section-heading {
+		.ua-headline {
+			color: $invert-text-color;
+			margin-top: 0;
+		}
+	}
+
+	.ua-section-tagline {
+		font-size: ($font-size-base * 1.125);
+	}
+
+	.ua-address {
+		font-size: 16px;
+		@media(min-width: $screen-tablet) {
+			text-align: right;
+		}
+
+		.ua-logo {
+			display: block;
+			padding: 0;
+			margin-bottom: 18px;
+			width: 150px;
+			height: 44px;
+			background-size: 100%;
+			background-position: center top;
+
+			@media(min-width: $screen-tablet) {
+				margin-left: auto;
+				margin-right: 0;
+			}
+		}
+
+		a {
+			color: $invert-text-color;
+		}
+	}
+
+	.ua-copyright {
+		color: $invert-text-color;
+		font-size: small;
+		margin-top: 18px;
+		@media(min-width: $screen-tablet) {
+			text-align: right;
+		}
+	}
+}
+
+.ua-post 	{
+	padding-top: 25px;
+
+	iframe {
+		@media (max-width: $screen-phone)	{
+			@include img-responsive();
+		}
+	}
+}
+
+.ua-instagram-feed {
+	ul {
+
+		@media (max-width: $screen-phone) {
+			text-align: center;
+		}
+
+		li {
+			margin-bottom: 10px;
+
+			&:last-child {
+				@media (min-width: $screen-phone) and (max-width: $screen-desktop),
+				(device-width: $screen-tablet) and (orientation: landscape) {
+					display: none;
+				}
+
+				@media (max-width: $screen-phone) and (orientation: portrait)	{
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	@media (max-width: $screen-tablet) {	
+		padding: 0;
+
+		@media (orientation:landscape) {
+			max-width: 350px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+.ua-twitter-feed {
+	li {
+		margin-bottom: 18px;
+		padding-bottom: 18px;
+		border-bottom: 1px solid $brand-primary;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		p {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+/*! https://gist.github.com/jgarber/2302238 */
+
+.flex-video {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+ 
+.flex-video.widescreen { padding-bottom: 57.25%; }
+.flex-video.vimeo { padding-top: 0; }
+ 
+.flex-video iframe,
+.flex-video object,
+.flex-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+  .flex-video { padding-top: 0; }
+}
+
+.mfp-content {
+	background-color: #fff;
+}
+
+
+/*! IE8 fixes */
+
+.ie8 {
+
+	.ua-section {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	
+	.ua-logo 	{
+		background-image: url(../img/influence-digital-logo-ie.png);
+	}
+	
+	.ua-contact {
+		.ua-logo {
+			background-image: url(../img/influence-digital-logo-contact-ie.png);
+		}
+	}
+	
+	.clients {
+		&:after {
+			background: none;
+		}
+
+		display: inline-block;
+		width: 263px;
+		height: 112px;
+		background-image: url(../img/influence-digital-clients-ie.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: auto 224px;
+
+	    filter: gray;
+	    filter: alpha(opacity=40);
+
+		@include transition(all 0.3s linear);
+
+		&:hover,
+		&:focus,
+		&.hover {
+			filter: alpha(opacity=100);
+			filter: none;
+		}
+
+		&.client-thomas-cook {
+			background-position: 0 0;
+		}
+
+		&.client-we-are-fstvl {
+			background-position: -263px 0;
+		}
+
+		&.client-above-beyond {
+			background-position: -526px 0;
+		}
+
+		&.client-dorothy-perkins {
+			background-position: -789px 0;
+		}
+
+		&.client-lord-of-dance {
+			background-position: 0 -112px;
+		}
+
+		&.client-elite-model-look {
+			background-position: -263px -112px;
+		}
+
+		&.client-hobbs {
+			background-position: -526px -112px;
+		}
+
+		&.client-dennis {
+			background-position: -789px -112px;
+		}
+	}
+
+	.ua-work-logo {
+		&.ua-elite-logo {
+			background-image: url(../img/id-elite-logo-ie.png) !important;
+		}
+
+		&.ua-wearefstvl-logo {
+			background-image: url(../img/id-wearefstvl-logo-ie.png) !important;
+		}
+
+		&.ua-usoa-logo {
+			background-image: url(../img/id-usoa-logo-ie.png) !important;
+		}
+	}
+	
+	.ua-section-expertise {
+		@include clearfix();
+
+		> .col-sm-12 {
+			@include clearfix();
+		}
+
+		.ua-expertise {
+			float: left;
+			max-width: 400px;
+			min-height: 400px;
+
+			.media-object {
+				&:before {
+					background: none;
+				}
+				display: block;
+				width: 105px;
+				height: 105px;
+				background-image: url(../img/influence-digital-expertises-ie.png);
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				position: relative;
+				margin: 26px auto 0 auto;
+			}
+
+			.community-engagement {
+				.media-object {
+					background-position: 0 0;
+				}
+			}
+
+			.development-content {
+				.media-object {
+					background-position: -105px 0;
+				}
+			}
+
+			.advocacy {
+				.media-object {
+					background-position: -210px 0;
+				}
+			}
+
+			.partnerships {
+				.media-object {
+					background-position: 0 -105px;
+				}
+			}
+
+			.digital-advertising {
+				.media-object {
+					background-position: -105px -105px;
+				}
+			}
+
+			.listening-analytics-reporting {
+				.media-object {
+					background-position: -210px -105px;
+				}
+			}
+		}
+	}
+	
+	.ua-case {
+		.ua-work-background {
+			@include clearfix();
+
+			.ua-work-thumb {
+				float: left;
+				max-width: 768px;
+			}
+			
+			.ua-work-summary {
+				float: right;
+			}
+		}
+	}
+
+	.ua-contact {
+		@include clearfix();
+
+		.ua-instagram-feed,
+		.ua-twitter-feed,
+		.ua-address {
+			max-width: 400px;
+			float: left;
+		}
+	}
+}

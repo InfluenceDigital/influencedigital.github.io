@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "WE ARE FSTVL"
+date:   2014-05-25 08:00:00
+categories: work
+client: We Are FSTVL
+excerpt: Social Strategy, Advertising and Mobile App Development
+background: id-wearefstvl-background.jpg
+image: id-wearefstvl-thumb.png
+logo: id-wearefstvl-logo
+css: wearefstvl
+---
+
+<iframe src="//player.vimeo.com/video/97313554?title=0&amp;byline=0&amp;portrait=0&amp;color=ed3f4c&amp;autoplay=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+In 2013 we launched We Are FSTVL, a brand new electronic dance music festival held in Upminster, Essex. We created and implemented the digital strategy for the festival and created awareness though a mobile app, social apps, content creation and precise targeting resulting in high levels of fan engagement and ticket sales. The festival sold out on it's debut year and went on to win the Best New Festival award at the UK Festival Awards.

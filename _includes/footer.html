@@ -1,0 +1,17 @@
+		</div>
+		<!-- Scripts - HTML5 tags support for legacy IE -->
+		<!--[if lt IE 9]>
+			<script src="{{ site.url }}/js/lib/html5shiv.min.js" type="text/javascript"></script>
+			<style>html,body{zoom:1;}</style>
+		<![endif]-->
+		<script src="{{ site.url }}/js/lib/jquery.min.js"></script>
+		<script src="{{ site.url }}/js/lib/jquery-mobile-custom.min.js"></script>
+		<script src="{{ site.url }}/js/lib/bootstrap-custom.min.js"></script>
+		<script src="{{ site.url }}/js/lib/jquery-magnific-popup.min.js"></script>
+		<script src="{{ site.url }}/js/main.min.js"></script>
+
+		{% if site.url == 'http://127.0.0.1:4000' %}
+		<script src="//localhost:35729/livereload.js"></script>
+		{% endif %}
+	</body>
+</html>

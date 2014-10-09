@@ -1,0 +1,10 @@
+name: Influence Digital
+tagline: Social & Digital Marketing Agency, London
+description: Influence Digital is a London-based digital and social media agency formed by the team from United Agency, in partnership with Independent Talent Group Ltd and Outside Organisation. Influence Digital deliver award-winning strategies for clients, and offer digital creative and development, influencer engagement, community management, mobile apps, social media advertising and analytics.
+markdown: redcarpet
+pygments: true
+
+url: http://influencedigital.github.io
+baseurl: /
+
+exclude: ['bower_components', 'node_modules']

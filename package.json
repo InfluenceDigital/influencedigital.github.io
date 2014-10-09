@@ -1,0 +1,16 @@
+{
+  "name": "influence-digital",
+  "version": "1.0.0",
+  "author": "Jabran Rafique",
+  "copyright": "2014 United Agency",
+  "repo": "https://github.com/InfluenceDigital/influencedigital.github.io",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-imagemin": "~0.7.0",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-jekyll": "~0.4.2",
+    "grunt-contrib-concat": "~0.4.0"
+  }
+}
