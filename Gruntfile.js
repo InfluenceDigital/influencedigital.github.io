@@ -79,16 +79,14 @@ module.exports = function(grunt) {
 				files: ['_js/main.js'],
 				tasks: ['uglify'],
 				options: {
-					spawn: false,
-					livereload: true
+					spawn: false
 				}
 			},
 			css: {
 				files: ['_sass/*.scss'],
 				tasks: ['sass'],
 				options: {
-					spawn: false,
-					livereload: true
+					spawn: false
 				}
 			},
 			img: {
@@ -101,6 +99,8 @@ module.exports = function(grunt) {
 			},
 			jekyll: {
 				files: [
+					'./css/*.css',
+					'./js/*.js',
 					'./_layouts/*.html',
 					'./_includes/*.html',
 					'./_posts/*.markdown',

@@ -21,16 +21,24 @@ INFLUENCED = {
 		this.textToTweet();
 		this.keepNavigationVisible();
 
-		// Update first section height to global object on resize
-		$(window).resize(this.updateCoordsOnResize);
-
 		// Remove default animation css classes
 		window.setTimeout(function()	{
 			$('.animated.fadeInUp').removeClass('animated fadeInUp');
 		}, 1000);
 
-		$.getJSON('https://api.instagram.com/v1/users/396527045/media/recent/?count=9&client_id=f4bce47624494cc79f65e13480af7058&callback=?', this.setUpInstagram);
-		$.getJSON('http://influence.digital/lib/fetch-tweets.php', this.setUpTwitter);
+		// Update first section height to global object on resize
+		$(window).resize(this.updateCoordsOnResize);
+
+		var that = this;
+
+		$(window).on('load', function()	{
+
+			$.getJSON('https://api.instagram.com/v1/users/396527045/media/recent/?count=9&client_id=f4bce47624494cc79f65e13480af7058&callback=?', that.setUpInstagram);
+			$.getJSON('http://influence.digital/lib/fetch-tweets.php', that.setUpTwitter);
+
+			// that.loadVideo();
+		});
+
 	},
 
 	updateCoordsOnResize: function() {
@@ -206,6 +214,33 @@ INFLUENCED = {
 			twitterFeed.html('Twitter feed is not available.');
 			console.log(data.errors);
 		}
+	},
+
+	loadVideo: function() {
+		var video = $('<video />', {
+			'width': '100%',
+			'height': '100%'
+			// 'autoplay': 'yes'
+		}).css({
+			'position': 'absolute',
+			'display': 'block',
+			'width': '100%',
+			'height': '100%'
+		});
+		
+		var mp4 = $('<source />', {
+			'src': '../img/humming-bird.mp4'
+		}).appendTo(video);
+		
+		var webm = $('<source />', {
+			'src': '../img/humming-bird.webm'
+		}).appendTo(video);
+		
+		var ogv = $('<source />', {
+			'src': '../img/humming-bird.ogv'
+		}).appendTo(video);
+
+		$('.ua-home').prepend(video);
 	}
 };
 
