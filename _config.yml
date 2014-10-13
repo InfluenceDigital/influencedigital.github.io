@@ -4,7 +4,7 @@ description: Influence Digital is a London-based digital and social media agency
 markdown: redcarpet
 pygments: true
 
-url: http://127.0.0.1:4000
+url: http://influencedigital.github.io
 baseurl: /
 
 exclude: ['bower_components', 'node_modules']
