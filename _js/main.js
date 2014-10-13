@@ -190,7 +190,7 @@ INFLUENCED = {
 
 	setUpTwitter: function(data) {
 		var twitterFeed = $('.ua-twitter-feed');
-		if ( data ) {
+		if ( data && !data.errors ) {
 			var ul = $('<ul />', {'class': 'list-unstyled'}).appendTo(twitterFeed);
 			for ( var i in data ) {
 				var li = $('<li />', {
@@ -198,12 +198,13 @@ INFLUENCED = {
 					'html': data[i].text.toTweet()
 				}).appendTo(ul);
 				var p = $('<p />', {
-					'html': '<a href="https://twitter.com/influenceDGTL" target="_blank">@influenceDGTL</a> &ndash; ' + new Date(data[i].created_at).toDateString()
+					'html': data[i].created_at.substr(0, 11) + data[i].created_at.substr(data[i].created_at.length - 4)
 				}).prependTo(li);
 			}
 		}
 		else {
-			twitterFeed.html('No tweets.');
+			twitterFeed.html('Twitter feed is not available.');
+			console.log(data.errors);
 		}
 	}
 };

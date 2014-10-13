@@ -48,7 +48,7 @@ if ( isset($fw) && $fw ) {
     }
 
     if ( $fw->get_access_token() ) {
-        $result = json_decode($fw->get_by_user('theunitedagency', 2));
+        $result = json_decode($fw->get_by_user('influenceDGTL', 2));
     }
 }
 

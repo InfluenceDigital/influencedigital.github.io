@@ -19,10 +19,11 @@ $headings-font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif
 $headings-font-weight: 900;
 $headings-color: #5961ac;
 $text-color: #333; /* #646464; */
+$hr-color: #b4b4c9;
 $invert-text-color: #fff;
+$invert-text-link: $hr-color;
 $link-hover-color: $brand-primary;
 $brand-border-color: #f1f1f1;
-$hr-color: #b4b4c9;
 $service-heading-color: darken($brand-primary, 20%);
 
 // Import Bootstrap SASS
@@ -954,7 +955,7 @@ $service-heading-color: darken($brand-primary, 20%);
 		}
 
 		a {
-			color: $invert-text-color;
+			color: $invert-text-link;
 		}
 	}
 
@@ -1016,7 +1017,7 @@ $service-heading-color: darken($brand-primary, 20%);
 	li {
 		margin-bottom: 18px;
 		padding-bottom: 18px;
-		border-bottom: 1px solid $brand-primary;
+		border-bottom: 1px solid $hr-color;
 
 		&:last-child {
 			border-bottom: none;
@@ -1024,6 +1025,10 @@ $service-heading-color: darken($brand-primary, 20%);
 
 		p {
 			margin-bottom: 10px;
+		}
+
+		a {
+			color: $invert-text-link;
 		}
 	}
 }

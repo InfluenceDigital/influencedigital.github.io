@@ -4683,7 +4683,7 @@ img.mfp-img {
   }
 }
 .ua-contact .ua-address a {
-  color: white;
+  color: #b4b4c9;
 }
 .ua-contact .ua-copyright {
   color: white;
@@ -4741,13 +4741,16 @@ img.mfp-img {
 .ua-twitter-feed li {
   margin-bottom: 18px;
   padding-bottom: 18px;
-  border-bottom: 1px solid #5961ac;
+  border-bottom: 1px solid #b4b4c9;
 }
 .ua-twitter-feed li:last-child {
   border-bottom: none;
 }
 .ua-twitter-feed li p {
   margin-bottom: 10px;
+}
+.ua-twitter-feed li a {
+  color: #b4b4c9;
 }
 
 /*! https://gist.github.com/jgarber/2302238 */
