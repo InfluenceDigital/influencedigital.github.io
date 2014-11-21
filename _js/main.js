@@ -36,7 +36,7 @@ INFLUENCED = {
 			$.getJSON('https://api.instagram.com/v1/users/396527045/media/recent/?count=9&client_id=f4bce47624494cc79f65e13480af7058&callback=?', that.setUpInstagram);
 			$.getJSON('http://influence.digital/lib/fetch-tweets.php', that.setUpTwitter);
 
-			// that.loadVideo();
+			that.loadVideo('.ua-home');
 		});
 
 	},
@@ -216,31 +216,39 @@ INFLUENCED = {
 		}
 	},
 
-	loadVideo: function() {
-		var video = $('<video />', {
-			'width': '100%',
-			'height': '100%'
-			// 'autoplay': 'yes'
+	loadVideo: function(target) {
+		var $target = $(target);
+
+		var video = $('<video autoplay loop />', {
+			'width': $target.width(),
+			'height': $target.height(),
+			'poster': 'img/id-humming-bird.jpg'
 		}).css({
 			'position': 'absolute',
 			'display': 'block',
-			'width': '100%',
-			'height': '100%'
+			'min-width': '100%',
+			'min-height': '100%',
+			'width': 'auto',
+			'height': 'auto',
+			'left': '0',
+			'right': '0',
+			'top': '-90px',
+			'bottom': '0'
 		});
-		
-		var mp4 = $('<source />', {
-			'src': '../img/humming-bird.mp4'
-		}).appendTo(video);
 		
 		var webm = $('<source />', {
 			'src': '../img/humming-bird.webm'
+		}).appendTo(video);
+		
+		var mp4 = $('<source />', {
+			'src': '../img/humming-bird.mp4'
 		}).appendTo(video);
 		
 		var ogv = $('<source />', {
 			'src': '../img/humming-bird.ogv'
 		}).appendTo(video);
 
-		$('.ua-home').prepend(video);
+		video.prependTo($target);
 	}
 };
 

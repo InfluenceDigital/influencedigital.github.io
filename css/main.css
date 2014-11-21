@@ -3894,6 +3894,7 @@ img.mfp-img {
   left: 0;
   right: 0;
   margin: auto;
+  z-index: 1;
   -webkit-transition: position, 0.3s linear;
   -o-transition: position, 0.3s linear;
   transition: position, 0.3s linear;
@@ -4064,13 +4065,19 @@ img.mfp-img {
     font-size: 20px;
   }
 }
+@media (max-width: 480px) {
+  .ua-section-tagline {
+    display: none;
+  }
+}
 
 .nikola-tesla {
   font-style: oblique;
 }
 
-.ua-home {
-  background-image: url(../img/id-humming-bird.jpg);
+.ua-home .container {
+  position: relative;
+  z-index: 1;
 }
 .ua-home .ua-section-heading {
   background-color: rgba(0, 0, 0, 0);

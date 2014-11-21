@@ -99,8 +99,8 @@ module.exports = function(grunt) {
 			},
 			jekyll: {
 				files: [
-					'./css/*.css',
-					'./js/*.js',
+					'./_css/*.css',
+					'./_js/*.js',
 					'./_layouts/*.html',
 					'./_includes/*.html',
 					'./_posts/*.markdown',

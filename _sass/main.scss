@@ -78,6 +78,7 @@ $service-heading-color: darken($brand-primary, 20%);
 	left: 0;
 	right: 0;
 	margin: auto;
+	z-index: 1;
 	@include transition(position, 0.3s linear);
 
 	@media(max-width: $screen-tablet) {
@@ -270,6 +271,10 @@ $service-heading-color: darken($brand-primary, 20%);
 	@media (min-width: $screen-phone)	{
 		font-size: ($font-size-base * 1.25);
 	}
+
+	@media (max-width: $screen-xs)	{
+		display: none;
+	}
 }
 
 .nikola-tesla {
@@ -277,7 +282,12 @@ $service-heading-color: darken($brand-primary, 20%);
 }
 
 .ua-home {
-	background-image: url(../img/id-humming-bird.jpg);
+	// background-image: url(../img/id-humming-bird.jpg);
+
+	.container {
+		position: relative;
+		z-index: 1;
+	}
 	
 	.ua-section-heading {
 		background-color: rgba(0, 0, 0, 0);
